@@ -5,7 +5,10 @@
   "main": "app.js",
   "author": "Sean Morrow / NSCC Truro Campus",
   "license": "",
-  "dependencies": {},
+  "dependencies": {
+    "dragula": "^3.7.2",
+    "jquery": "^3.4.1"
+  },
   "devDependencies": {
     "gulp": "^3.9.1",
     "gulp-concat": "^2.6.0",
