@@ -15,7 +15,7 @@
 }
 //---------------------------------------- variables
 $transparent: #0000007a;
-$grey: #252525;
+$grey: #ffffff77;
 //---------------------------------------- styles
 html {
     margin: 0;
@@ -82,5 +82,27 @@ body {
         width: 80%;
         padding: 5px;
         margin-left: 5px;
+    }
+}
+.items {
+    @include display-flex();
+    flex-flow: column nowrap;
+    align-items: center; 
+    margin-bottom: 10px;
+}
+.item {
+    @include display-flex();
+    flex-flow: row wrap;
+    justify-content: space-between;
+    background-color: $grey;
+    color: white;
+    width: 80%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    &__move {
+        all: unset;
+        cursor: pointer;
     }
 }
