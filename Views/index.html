@@ -17,20 +17,25 @@
             <div class="content__section">
                 <div class="section__title">Backlog</div>
                 <div class="items" id="backlog">
-                    <div class="item">Hey There</div>
-                    <div class="item">What's good?</div>
+                    
                 </div>
                 <div class="add">
-                    <i class="fas fa-plus"></i><input type="text" name="item" placeholder="Add item to backlog" class="add__input">
+                    <form method="post" action="../Controllers/homeController.php" id="formBacklog">
+                        <input type='hidden' name="action" value="backlog">
+                        <i class="fas fa-plus"></i><input type="text" name="item" placeholder="Add item to backlog" class="add__input" id="txtBacklog">
+                    </form>
                 </div>
             </div>
             <div class="content__section">
                 <div class="section__title">In Progress</div>
                 <div class="items" id="in-progress">
-                    <div class="item">Hello</div>
+                    
                 </div>
                 <div class="add">
-                    <i class="fas fa-plus"></i><input type="text" name="item" placeholder="Add in-progress item" class="add__input">
+                    <form method="post" action="../Controllers/homeController.php" id="formProgress">
+                        <input type='hidden' name="action" value="progress">
+                        <i class="fas fa-plus"></i><input type="text" name="item" placeholder="Add in-progress item" class="add__input" id="txtProgress">
+                    </form>
                 </div>
             </div>
             <div class="content__section">
@@ -39,7 +44,10 @@
                     
                 </div>
                 <div class="add">
-                    <i class="fas fa-plus"></i><input type="text" name="item" placeholder="Add completed item" class="add__input">
+                    <form method="post" action="../Controllers/homeController.php" id="formDone">
+                        <input type='hidden' name="action" value="done">
+                        <i class="fas fa-plus"></i><input type="text" name="item" placeholder="Add completed item" class="add__input" id="txtDone">
+                    </form>
                 </div>
             </div>
         </div>

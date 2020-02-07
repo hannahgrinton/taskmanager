@@ -67,11 +67,3 @@ body {
   width: 80%;
   padding: 5px;
   margin-left: 5px; }
-
-.item {
-  background-color: white;
-  color: black;
-  padding: 10px;
-  margin: 10px;
-  cursor: grab;
-  position: absolute; }
