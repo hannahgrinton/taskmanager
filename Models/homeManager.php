@@ -37,7 +37,7 @@ class HomeManager {
     }
     //create a new task item
     public function add($text, $category) {
-        $item = new Item($text, $category);
+        $item = new Item(null, $text, $category);
         $table_name = "items";
         $connection = db_connect();
         if ($connection->connect_error) {

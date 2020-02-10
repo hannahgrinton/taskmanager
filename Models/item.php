@@ -9,7 +9,7 @@ class Item {
                         //3 = done
     private $_id; //unique identifier
     // ------------------------------------------------ contructor
-    public function __construct($id = null, $myCategory, $myText) {
+    public function __construct($id, $myCategory, $myText) {
         $this->_id = $id;
         $this->_text = $myText;
         $this->_category = $myCategory;
