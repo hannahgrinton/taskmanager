@@ -9,26 +9,26 @@ class Item {
                         //3 = done
     private $_id; //unique identifier
     // ------------------------------------------------ contructor
-    public function __construct($myText, $myCategory) {
-        $_id = null;
-        $_text = $myText;
-        $_category = $myCategory;
+    public function __construct($id = null, $myCategory, $myText) {
+        $this->_id = $id;
+        $this->_text = $myText;
+        $this->_category = $myCategory;
     }
     // ------------------------------------------------ gets / sets
     public function getText() {
-        return $_text;
+        return $this->_text;
     }
     public function setText($myText) {
-        $_text = $myText;
+        $this->_text = $myText;
     }
     public function getCategory() {
-        return $_category;
+        return $this->_category;
     }
     public function setCategory($myCategory) {
-        $_category = $myCategory;
+        $this->_category = $myCategory;
     }
     public function getId() {
-        return $_id;
+        return $this->_id;
     }
     // ------------------------------------------------ private methods
     // ------------------------------------------------ public methods

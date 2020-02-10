@@ -1,3 +1,8 @@
+<?php
+require_once('../Models/homeManager.php');
+$homeManager = new HomeManager();
+$homeManager->retrieveItems();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,7 +22,22 @@
             <div class="content__section">
                 <div class="section__title">Backlog</div>
                 <div class="items" id="backlog">
-                    
+                    <?php 
+                        foreach($homeManager->getBacklog() as $item) {
+                            $id = $item->getId();
+                            echo "
+                                <div class='item'>
+                                    <span>".$item->getText()."</span>
+                                    <form method='post' action='../Controllers/homeController.php'>
+                                        <input type='hidden' name='action' value='move'>
+                                        <input type='hidden' value='{$id}' name='id'>
+                                        <button class='item__move'><i class='fas fa-chevron-right'></i></button>
+                                    </form>
+                                </div>
+                            ";
+                        }
+                        
+                    ?>
                 </div>
                 <div class="add">
                     <form method="post" action="../Controllers/homeController.php" id="formBacklog">
@@ -29,22 +49,22 @@
             <div class="content__section">
                 <div class="section__title">In Progress</div>
                 <div class="items" id="in-progress">
-                    <!-- <div class="item">
-                        <span>This is a test item</span>
-                        <form method="post" action="../Controllers/homeController.php">
-                            <input type="hidden" name="action" value="move">
-                            <input type="hidden" value="" name="id">
-                            <button class="item__move"><i class="fas fa-chevron-right"></i></button>
-                        </form>
-                    </div> -->
-                    <!-- <div class="item">
-                        <span>This is a test item</span>
-                        <form method="post" action="../Controllers/homeController.php">
-                            <input type="hidden" name="action" value="move">
-                            <input type="hidden" value="" name="id">
-                            <button class="item__move"><i class="fas fa-chevron-right"></i></button>
-                        </form>
-                    </div> -->
+                <?php 
+                    foreach($homeManager->getProgress() as $item) {
+                        $id = $item->getId();
+                        echo "
+                            <div class='item'>
+                                <span>".$item->getText()."</span>
+                                <form method='post' action='../Controllers/homeController.php'>
+                                    <input type='hidden' name='action' value='move'>
+                                    <input type='hidden' value='{$id}' name='id'>
+                                    <button class='item__move'><i class='fas fa-chevron-right'></i></button>
+                                </form>
+                            </div>
+                        ";
+                    }
+                        
+                ?>
                 </div>
                 <div class="add">
                     <form method="post" action="../Controllers/homeController.php" id="formProgress">
@@ -56,7 +76,22 @@
             <div class="content__section">
                 <div class="section__title">Done</div>
                 <div class="items" id="done">
-                    
+                <?php 
+                    foreach($homeManager->getDone() as $item) {
+                        $id = $item->getId();
+                        echo "
+                            <div class='item'>
+                                <span>".$item->getText()."</span>
+                                <form method='post' action='../Controllers/homeController.php'>
+                                    <input type='hidden' name='action' value='back'>
+                                    <input type='hidden' value='{$id}' name='id'>
+                                    <button class='item__move'><i class='fas fa-undo'></i></button>
+                                </form>
+                            </div>
+                        ";
+                    }
+                        
+                ?>
                 </div>
                 <div class="add">
                     <form method="post" action="../Controllers/homeController.php" id="formDone">

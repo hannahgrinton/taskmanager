@@ -12,6 +12,8 @@ if($_POST['action'] == "backlog") {
     done($homeManager);
 } else if ($_POST['action'] == "move") {
     move($homeManager);
+} else if ($_POST['action'] == "back") {
+    back($homeManager);
 }
 // ----------------------------------------- functions for adding to categories
 function backlog($myHomeManager) {
@@ -44,8 +46,19 @@ function done($myHomeManager) {
 // ----------------------------------------- moving right to next category
 function move($myHomeManager) {
     $homeManager = $myHomeManager;
+    $homeManager->retrieveItems();
     if (isset($_POST['id'])) {
-        $id = $homeManager->move($id);
+        $id = $_POST['id'];
+        $homeManager->move($id);
+    }
+    header('Location: ../Views/index.php');
+}
+function back($myHomeManager) {
+    $homeManager = $myHomeManager;
+    $homeManager->retrieveItems();
+    if (isset($_POST['id'])) {
+        $id = $_POST['id'];
+        $homeManager->back($id);
     }
     header('Location: ../Views/index.php');
 }
