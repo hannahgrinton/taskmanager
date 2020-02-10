@@ -43,7 +43,7 @@ function done($myHomeManager) {
     }
     header('Location: ../Views/index.php');
 }
-// ----------------------------------------- moving right to next category
+// ----------------------------------------- moving right or left to next category
 function move($myHomeManager) {
     $homeManager = $myHomeManager;
     $homeManager->retrieveItems();
