@@ -28,11 +28,18 @@ $homeManager->retrieveItems();
                             echo "
                                 <div class='item'>
                                     <span>".$item->getText()."</span>
-                                    <form method='post' action='../Controllers/homeController.php'>
-                                        <input type='hidden' name='action' value='move'>
-                                        <input type='hidden' value='{$id}' name='id'>
-                                        <button class='item__move'><i class='fas fa-chevron-right'></i></button>
-                                    </form>
+                                    <span style='display: flex; flex-flow: row nowrap;'>
+                                        <form method='post' action='../Controllers/homeController.php'>
+                                            <input type='hidden' name='action' value='delete'>
+                                            <input type='hidden' value='{$id}' name='id'>
+                                            <button class='item__move' style='margin-right: 10px;'><i class='far fa-trash-alt'></i></button>
+                                        </form>
+                                        <form method='post' action='../Controllers/homeController.php'>
+                                            <input type='hidden' name='action' value='move'>
+                                            <input type='hidden' value='{$id}' name='id'>
+                                            <button class='item__move'><i class='fas fa-chevron-right'></i></button>
+                                        </form>
+                                    </span>
                                 </div>
                             ";
                         }
@@ -55,11 +62,18 @@ $homeManager->retrieveItems();
                         echo "
                             <div class='item'>
                                 <span>".$item->getText()."</span>
-                                <form method='post' action='../Controllers/homeController.php'>
-                                    <input type='hidden' name='action' value='move'>
-                                    <input type='hidden' value='{$id}' name='id'>
-                                    <button class='item__move'><i class='fas fa-chevron-right'></i></button>
-                                </form>
+                                <span style='display: flex; flex-flow: row nowrap;'>
+                                    <form method='post' action='../Controllers/homeController.php'>
+                                        <input type='hidden' name='action' value='delete'>
+                                        <input type='hidden' value='{$id}' name='id'>
+                                        <button class='item__move' style='margin-right: 10px;'><i class='far fa-trash-alt'></i></button>
+                                    </form>
+                                    <form method='post' action='../Controllers/homeController.php'>
+                                        <input type='hidden' name='action' value='move'>
+                                        <input type='hidden' value='{$id}' name='id'>
+                                        <button class='item__move'><i class='fas fa-chevron-right'></i></button>
+                                    </form>
+                                </span>
                             </div>
                         ";
                     }
@@ -82,11 +96,18 @@ $homeManager->retrieveItems();
                         echo "
                             <div class='item'>
                                 <span>".$item->getText()."</span>
-                                <form method='post' action='../Controllers/homeController.php'>
-                                    <input type='hidden' name='action' value='back'>
-                                    <input type='hidden' value='{$id}' name='id'>
-                                    <button class='item__move'><i class='fas fa-undo'></i></button>
-                                </form>
+                                <span style='display: flex; flex-flow: row nowrap;'>
+                                    <form method='post' action='../Controllers/homeController.php'>
+                                        <input type='hidden' name='action' value='delete'>
+                                        <input type='hidden' value='{$id}' name='id'>
+                                        <button class='item__move' style='margin-right: 10px;'><i class='far fa-trash-alt'></i></button>
+                                    </form>
+                                    <form method='post' action='../Controllers/homeController.php'>
+                                        <input type='hidden' name='action' value='back'>
+                                        <input type='hidden' value='{$id}' name='id'>
+                                        <button class='item__move'><i class='fas fa-undo'></i></button>
+                                    </form>
+                                </span>
                             </div>
                         ";
                     }

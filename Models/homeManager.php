@@ -59,6 +59,31 @@ class HomeManager {
         //close
         $sql->close();
     }
+    //delete the task from the database
+    public function delete($id) {
+        $item = $this->getItem($id);
+        $table_name = "items";
+        $connection = db_connect();
+        if ($connection->connect_error) {
+            die("Connection failed: " . $connection->connect_error);
+        }
+        //prepare statement
+        if (!($sql = $connection->prepare("DELETE FROM $table_name WHERE id=?"))) {
+            echo "Prepare failed: (" . $mysqli->errno . ") " . $mysqli->error;
+        }
+        $current = $item->getCategory();
+        $new = $current + 1;
+        //bind variables
+        if (!($sql->bind_param("i", $id))) {
+            echo "Binding parameters failed: (" . $sql->errno . ") " . $sql->error;
+        }
+        //run query
+        if (!$sql->execute()) {
+            echo "Execute failed: (" . $sql->errno . ") " . $sql->error;
+        }
+        //close
+        $sql->close();
+    }
     //move the task item to the category to the right
     public function move($id) {
         $item = $this->getItem($id);
